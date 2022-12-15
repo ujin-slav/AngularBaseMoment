@@ -1,0 +1,7 @@
+<p class="bg-blue-400" [ngClass]="{classRed:detail}">{{product.name}}</p>
+
+<button (click)="detail = !detail">hhhh</button>
+
+<div *ngIf="detail">
+    Более пробробная информация
+</div>
