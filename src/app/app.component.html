@@ -1,3 +1,15 @@
+<app-global-error></app-global-error>
 <h1 class="text-3xl font-bold underline">Hello Angular! {{title}}</h1>
-<app-product *ngFor="let product of products; let i = index" [product]="product">
-</app-product>
+<h1 class="text-3xl font-bold underline">{{loading}}</h1>
+<app-product *ngFor="let product of products; let i = index" [product]="product"></app-product>
+<input
+class="border rounded py-2 px-3"
+[(ngModel)]="text"
+/>
+<app-carousel *ngFor="let user of users | filterUsers: text; let i = index" [user]="user"></app-carousel>
+<button (click)="clickHandle()" class="border">Shadow</button>
+<span *ngIf="modal">
+    <app-modal>
+        <app-create-product></app-create-product>
+    </app-modal>
+</span>

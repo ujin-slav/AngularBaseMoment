@@ -1,0 +1,12 @@
+<div class="absolute left-1/2 top-1/2 bg-white w-[500px] h-[500px]">create-product works!
+    <form [formGroup]="form" (ngSubmit)="submit()">
+        <input 
+        (keyup)="changeHandler($event)" 
+        class="border"  
+        formControlName="title"/>
+        <button>Отправить</button>
+    </form>
+    <div class="text-red-700" *ngIf="title.errors">
+        Слишком коротко
+    </div>
+</div>
